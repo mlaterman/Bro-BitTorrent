@@ -1,11 +1,12 @@
-BitTorrent-uTP
+Bro-BitTorrent
 ==============
 
-Bro scripts to identify local hosts that are using BitTorrent over UDP (via uTP)
+Bro scripts to identify BitTorrent connections.
 
-Signature file scans all udp connections for the string "BitTorrent Protocol"
+Signature files scans all udp or tcp connections for the string "BitTorrent Protocol"
 
-Sets service tag in conn.log to 'utp' for connections that had a peer connection observed
+If BitTorrent Protocol is obsserved in a tcp connection then the service tag is set to 'bit'.
+If observed in a udp connection then the service tag in conn.log to 'utp'.
 
 Other files (-log and -notify) can log the number of peers seen in a new log (utp.log) or to notice.log.
 
